@@ -1,0 +1,24 @@
+.footer {
+  display: grid;
+  padding: 0 1rem;
+  grid-template-areas: "copyRight copyRight";
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr;
+  align-items: center; /* 垂直置中內容 */
+  height: 2.5rem; /* 控制 footer 高度 */
+}
+
+@media (min-width: 1024px) {
+  .footer {
+    grid-template-areas: "copyRight copyRight copyRight";
+    grid-template-columns: 12fr 2fr minmax(7rem, 1fr);
+  }
+}
+
+.footer-copyRight {
+  grid-area: copyRight;
+  text-align: center;
+  justify-self: center;
+  margin: 0;
+  line-height: 1; /* 確保單行 */
+}
