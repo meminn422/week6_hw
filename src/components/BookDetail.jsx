@@ -34,15 +34,16 @@ function ProductDetail({ product }) {
               <select
                 id="qty"
                 className="select select-bordered w-20 bg-[#111818] text-white"
-                defaultValue={product.countInStock > 0 ? 1 : 0}
-                onChange={e => setQty(Number(e.target.value))}
-              >
-                {Array(product.stock).fill(0).map((_, x) => (
-                  <option key={x + 1} value={x + 1}>
-                    {x + 1}
-                  </option>
+                value={qty} // 👈 用 value 綁定
+                onChange={e => setQty(Number(e.target.value))} // 👈 確保即時更新
+                >
+                {Array(product.stock).fill(0).map((_, i) => (
+                    <option key={i + 1} value={i + 1}>
+                    {i + 1}
+                    </option>
                 ))}
-              </select>
+                </select>
+
             </div>
 
             {/* 加入購物車 */}
